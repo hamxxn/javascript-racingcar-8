@@ -5,8 +5,10 @@ import {
   isValidateRound,
   parseCarNames,
   getRandomNumber,
+  getWinner,
   shouldMove,
 } from "../utils/index.js";
+import { CAR_MOVE_CONDITION } from "../constants/index.js";
 
 class GameManager {
   constructor() {
@@ -26,6 +28,9 @@ class GameManager {
     Array.from({ length: round }, () => {
       this.runRound(cars);
     });
+
+    const winners = getWinner(cars);
+    this.resultView.printFinalResult(winners);
   }
 
   async getValidatedInputs() {
