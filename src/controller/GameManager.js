@@ -4,6 +4,8 @@ import {
   isValidateCarNames,
   isValidateRound,
   parseCarNames,
+  getRandomNumber,
+  shouldMove,
 } from "../utils/index.js";
 
 class GameManager {
@@ -19,6 +21,11 @@ class GameManager {
   async playGame() {
     const { carNames, round } = await this.getValidatedInputs();
     const cars = this.createCars(carNames);
+
+    this.resultView.printGameStart();
+    Array.from({ length: round }, () => {
+      this.runRound(cars);
+    });
   }
 
   async getValidatedInputs() {
@@ -31,6 +38,16 @@ class GameManager {
     const round = parseInt(roundInput);
 
     return { carNames, round };
+  }
+
+  runRound(cars) {
+    cars.forEach((car) => {
+      const randomNumber = getRandomNumber();
+      if (shouldMove(randomNumber)) {
+        car.move();
+      }
+    });
+    this.resultView.printRoundResult(cars);
   }
 }
 
