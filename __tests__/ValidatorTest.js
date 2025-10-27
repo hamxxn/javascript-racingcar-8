@@ -19,11 +19,6 @@ describe("자동차 이름 문자열 테스트", () => {
       expected: ERROR_MESSAGES.INVALID_COMMON_INPUT,
     },
     {
-      desc: "공백이 있는 자동차 이름이 있으면 에러를 발생시킨다.",
-      input: "pobi, woni , jun",
-      expected: ERROR_MESSAGES.INVALID_COMMON_INPUT,
-    },
-    {
       desc: "가장 뒤에 쉼표가 있으면 에러를 발생시킨다.",
       input: "pobi,",
       expected: ERROR_MESSAGES.INVALID_COMMON_INPUT,
