@@ -8,6 +8,10 @@ export const isValidateCarNames = (input) => {
 
   const carNames = parseCarNames(input);
 
+  if (carNames.some((name) => name === "")) {
+    throw new Error(ERROR_MESSAGES.INVALID_COMMON_INPUT);
+  }
+
   if (
     carNames.some(
       (name) =>
