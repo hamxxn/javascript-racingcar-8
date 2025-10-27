@@ -1,0 +1,21 @@
+import { CAR_NAME_DELIMITER, CAR_NAME_LENGTH } from "./car.js";
+
+export const COMMON_ERROR_MESSAGES = {
+  INVALID_COMMON_INPUT: "[ERROR] 입력 형식을 다시 확인해 주세요.",
+};
+
+export const CAR_ERROR_MESSAGES = {
+  INVALID_CAR_NAMES: `[ERROR] 자동차 이름은 ${CAR_NAME_DELIMITER.LABEL}(${CAR_NAME_DELIMITER.VALUE}) 기준으로 구분해주세요 (ex. 'car1${CAR_NAME_DELIMITER.VALUE}car2${CAR_NAME_DELIMITER.VALUE}car3')`,
+  INVALID_CAR_NAME_LENGTH: `[ERROR] 자동차 이름은 ${CAR_NAME_LENGTH.MIN}자 이상 ${CAR_NAME_LENGTH.MAX}자 이하여야해요.`,
+  INVALID_CAR_NAME_DUPLICATE: "[ERROR] 자동차 이름은 중복될 수 없습니다.",
+};
+
+export const ROUND_ERROR_MESSAGES = {
+  INVALID_ROUND: "[ERROR] 시도할 횟수는 양수여야 해요.",
+};
+
+export const ERROR_MESSAGES = {
+  ...COMMON_ERROR_MESSAGES,
+  ...CAR_ERROR_MESSAGES,
+  ...ROUND_ERROR_MESSAGES,
+};
