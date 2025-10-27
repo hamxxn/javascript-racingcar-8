@@ -1,4 +1,4 @@
-import { CAR_NAME_DELIMITER, CAR_NAME_LENGTH } from "./car.js";
+import { CAR_NAME_DELIMITER, CAR_NAME_LENGTH } from "./index.js";
 
 export const COMMON_ERROR_MESSAGES = {
   INVALID_COMMON_INPUT: "[ERROR] 입력 형식을 다시 확인해 주세요.",
