@@ -8,7 +8,6 @@ import {
   getWinner,
   shouldMove,
 } from "../utils/index.js";
-import { CAR_MOVE_CONDITION } from "../constants/index.js";
 
 class GameManager {
   constructor() {
